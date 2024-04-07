@@ -1,0 +1,16 @@
+/*
+Author: Calendario, Mark Kenneth S. (BSCS 3-1N)
+Description: This CSS file is for responsiveness of container.
+Date: April 3, 2024
+*/
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+  }
+}

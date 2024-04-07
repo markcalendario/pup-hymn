@@ -1,0 +1,285 @@
+/*
+Author: Calendario, Mark Kenneth S. (BSCS 3-1N)
+Description: This CSS file is a main stylesheet of PUP Hymn (the index page)
+Date: April 3, 2024
+*/
+
+#title-block {
+  background-color: #4e0000;
+  background-image: url("../assets/background.svg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  display: flex;
+}
+
+#title-block.max-height {
+  min-height: calc(100vh - 195px);
+}
+
+#title-block .container .wrapper img {
+  width: 50px;
+  aspect-ratio: 1;
+  box-shadow: rgba(0, 0, 0, 0.308) 0px 3px 8px;
+}
+
+#title-block .container .wrapper .texts {
+  color: white;
+}
+
+#title-block .container .wrapper .texts h1 {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+#title-block .container .wrapper .texts .description {
+  font-size: 14px;
+}
+
+#title-block .container .wrapper .texts #status-tab,
+#title-block .container .wrapper .texts #instrumental-tab {
+  margin-top: 10px;
+  padding: 5px 8px;
+  color: black;
+  display: inline-block;
+  font-size: 11px;
+  border-radius: 50px;
+}
+
+#title-block .container .wrapper .texts #status-tab {
+  background-color: #ffa600;
+}
+
+#title-block .container .wrapper .texts #instrumental-tab {
+  background-color: #00cf68;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  #title-block {
+    padding: 20px 0;
+  }
+
+  #title-block.max-height {
+    min-height: calc(100vh - 85px);
+  }
+
+  #title-block .container .wrapper {
+    display: flex;
+    align-items: end;
+  }
+
+  #title-block .container .wrapper img {
+    width: 120px;
+  }
+
+  #title-block .container .wrapper .texts {
+    margin-left: 20px;
+  }
+
+  #title-block .container .wrapper .texts h1 {
+    font-size: 46px;
+    font-weight: 900;
+  }
+
+  #title-block .container .wrapper .texts #status-tab {
+    margin-top: unset;
+  }
+
+  #title-block .container .wrapper #play {
+    background-color: #ffbb00;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Lyrics */
+
+#lyrics {
+  background: url("../assets/lyrics-background.png");
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 177px - 195px);
+  /* 177px (title block), 195px (audio controller) */
+  display: none;
+}
+
+#lyrics .container .wrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#lyrics .container .wrapper p {
+  margin: 15px 0;
+}
+
+@keyframes push-up {
+  from {
+    transform: translateY(20px);
+    font-size: 16px;
+    font-weight: unset;
+    color: white;
+  }
+
+  to {
+    color: #ffa600;
+    transform: translateY(0px);
+  }
+}
+
+.push-up {
+  animation: push-up 0.3s ease forwards;
+}
+
+@keyframes push-down {
+  from {
+    transform: translateY(20px);
+    color: #ffa600;
+    font-size: larger;
+    font-weight: 900;
+  }
+}
+
+.push-down {
+  animation: push-down 0.3s ease forwards;
+}
+
+#lyrics .container .wrapper #current-line {
+  color: #ffa600;
+  font-size: larger;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+#lyrics .container .wrapper #prev-prev-line,
+#lyrics .container .wrapper #next-next-line {
+  color: #8f8f8f;
+}
+
+#lyrics .container .wrapper #prev-line,
+#lyrics .container .wrapper #next-line {
+  color: #d3d3d3;
+}
+
+@media screen and (min-width: 768px) {
+  #lyrics {
+    min-height: calc(100vh - 160px - 85px);
+  }
+
+  #lyrics .container .wrapper #current-line {
+    font-size: 42px;
+  }
+
+  @keyframes push-up {
+    from {
+      transform: translateY(20px);
+      font-size: 16px;
+      font-weight: unset;
+      color: white;
+    }
+
+    to {
+      color: #ffa600;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes push-down {
+    from {
+      transform: translateY(20px);
+      color: #ffa600;
+      font-size: larger;
+      font-weight: 900;
+      font-size: 42px;
+    }
+  }
+}
+
+@media screen and (max-width: 456px) {
+  #lyrics {
+    min-height: calc(100vh - 194px - 195px);
+    /* para maging sakto ang height ng lyrics block sa screen
+    230px is size ng title block
+    135px is size ng audio controller
+    */
+
+    display: none;
+  }
+}
+
+/* Audio Controller */
+
+#audio-controller {
+  padding: 20px;
+  background-color: #111111;
+  color: white;
+  position: relative;
+}
+
+#audio-controller .album-preview {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#audio-controller .album-preview img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 50%;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotateZ(360deg);
+  }
+}
+
+#audio-controller .main-control {
+  width: 100%;
+  margin: 20px 0;
+  height: 40px;
+}
+
+#audio-controller .main-control audio {
+  width: 100%;
+  height: 100%;
+}
+
+#audio-controller .other-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+#audio-controller .other-controls button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+}
+
+#audio-controller .other-controls button img {
+  width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  #audio-controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #audio-controller .main-control {
+    flex: 0.7;
+    margin: unset;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <title>The PUP Hymn</title>
+  </head>
+  <body>
+    <section id="title-block" class="max-height">
+      <div class="container">
+        <div class="wrapper">
+          <img src="./assets/album-cover.png" alt="pup album cover" />
+          <div class="texts">
+            <p id="status-tab">Ready (Press space or click play to start)</p>
+            <p id="instrumental-tab">Instrumental Mode</p>
+            <h1 id="title">Imno ng PUP</h1>
+            <p class="description">
+              The hymn of the Polytechnic University of the Philippines.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="lyrics">
+      <div class="container">
+        <div class="wrapper">
+          <p id="prev-prev-line"></p>
+          <p id="prev-line"></p>
+          <p id="current-line"></p>
+          <p id="next-line"></p>
+          <p id="next-next-line"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="audio-controller">
+      <div class="album-preview">
+        <img
+          id="rotating-cd"
+          src="./assets/album-cover.png"
+          alt="pup album cover" />
+        <div class="texts">
+          <p><strong>Imno ng PUP</strong></p>
+          <p>PUP Hymn</p>
+        </div>
+      </div>
+
+      <div class="main-control">
+        <audio id="hymn" controls>
+          <source id="hymn-source" src="./assets/imno-ng-pup.mp3" />
+        </audio>
+      </div>
+
+      <div class="other-controls">
+        <button id="restart" title="Restart">
+          <img src="./assets/restart.png" alt="restart" />
+        </button>
+        <button id="forward" title="+5 seconds">
+          <img src="./assets/fast-forward.png" alt="fast forward" />
+        </button>
+        <button id="rewind" title="-5 seconds">
+          <img src="./assets/rewind.png" alt="rewind" />
+        </button>
+        <button id="loop" title="loop">
+          <img src="./assets/loop.png" alt="loop" />
+        </button>
+        <button id="instrumental" title="toggle instrumental">
+          <img src="./assets/music.png" alt="instrumental" />
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script src="./script.js"></script>
